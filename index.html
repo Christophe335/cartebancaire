@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saisie carte de crédit</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <main>
+    <section id="saisie">
+        <div id="logo">
+            <img src="images/MasterCard_Logo.svg" alt="" name="logo1" id="logo1" width="75px" height="35px">
+            <img src="images/Visa_Logo.svg" alt="" name="logo2" id="logo2" width="75px" height="35px">
+            <img src="images/carte_bleue.png" alt="" name="logo3" id="logo3" width="60px" height="35px">
+        </div>
+        <form action="" method="post" name="code" id="formulaire">
+            <div id="ligne1">
+                <label for="nom" id="label_nom">Nom : </label>
+                <input type="text" id="input_nom" required>
+            </div>
+            <div id="ligne2">
+                <label for="nombre" id="label_number">Numéro : </label>
+                <div id="align1">
+                <input type="text" maxlength="4" name="code1" size="4" id="number_one"  required>
+                <input type="text" maxlength="4" name="code2" size="4" id="number_two" required>
+                <input type="text" maxlength="4" name="code3" size="4" id="number_three" required>
+                <input type="text" maxlength="4" name="code4" size="4" id="number_four" required>
+                </div>
+            </div>
+            <div id="ligne3">
+                <div id="align2">
+                <label for="date" id="date">Expire le </label>
+                <select name="mois" id="mois">
+                    <option value="">Mois</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select name="date" id="annee">
+                    <option value="">Année</option>
+                    <option value="22">2022</option>
+                    <option value="23">2023</option>
+                    <option value="24">2024</option>
+                    <option value="25">2025</option>
+                    <option value="26">2026</option>
+                    </select>
+                <input type="text" maxlength="4" size="4" id="cvc" value="CVC">
+                </div>
+            </div>
+            <button type="button" id="bouton_payer" class="payer">Payer</button>
+
+        </form>
+        
+    </section>
+   
+    <div class="carte" id="cartee">
+        <div class="carte-interieur" id="cartei">
+            <div class="carte-recto">
+                <div class="carte-contenu">
+                    <div id="case_nom"></div>
+                    <div id="numero_carte">
+                        <div id="part1"></div>
+                        <div id="part2"></div>
+                        <div id="part3"></div>
+                        <div id="part4"></div>
+                    </div>
+                    <div id="affichedate">
+                        <p>Expire:</p>
+                        <div id="affichemois"></div>
+                        <p>/</p>
+                        <div id="afficheannee"></div>
+                        <div id="affichelogo"><img id="affLog1" src="images/Logo_MasterCard.svg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="carte-verso">
+                <div id="bande"></div>
+                <div id="affichecode"></div>
+                <div id="partie_basse">
+                    <div id="colombe"></div>
+                    <div id="affichelogo2"><img id="affLog2" src="images/Logo_MasterCard.svg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+   </main> 
+   
+</body>
+</html>

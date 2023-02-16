@@ -1,0 +1,542 @@
+@font-face {
+    font-family: 'Orbitron-SemiBold';
+    src: url(fonts/Orbitron-SemiBold.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'SKCuriosity-Bold';
+    src: url(fonts/SKCuriosity-Bold.woff2) format('woff2');
+}
+/* elements communs */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    min-height: 100vh;
+    font-family: 'SKCuriosity-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    /* height: 100vh; */
+}
+
+main {
+    background-color: white;
+    width: 972px;
+    height: 515px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    box-shadow: 8px 8px 30px #00000050;
+    display: flex;
+}
+input {
+    border-radius: 5px;
+    background-color: #ffffff50;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
+
+input:valid {
+    border: 1px solid blue;
+}
+
+input:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+/* partie de saisie  des informations */
+
+#logo {
+    margin: 85px 0px 35px 115px;
+}
+#logo1 {
+    margin-right: 4px;
+}
+#logo2 {
+    margin-right: 15px;
+}
+
+#ligne1, #ligne2, #ligne3 {
+    margin-bottom: 37px;
+}
+
+#ligne1 {
+    margin-left: 50px;
+    margin-right: 35px;
+    display: flex;
+}
+
+#label_nom, #label_number {
+    margin-top: 7px;
+}
+
+#input_nom {
+    margin-left: 10px;
+    width: 252px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+}
+
+#ligne2 {
+    margin-left: 22px;
+    display: flex;
+}
+#label_number {
+    margin-right: 10px;
+}
+#number_one, #number_two, #number_three, #number_four {
+    margin-right: 2px;
+    width: 54px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+}
+
+#ligne3 {
+    margin-left: 22px;
+}
+#date {
+    margin-right: 6px;
+}
+#mois, #annee {
+    margin-left: 3px;
+    width: 82px;
+    height: 33px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#cvc {
+    width: 40px;
+    height: 22px;
+    line-height: 120px;
+    margin-left: 5px;
+    font-family: 'SKCuriosity-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 7px 17px 3px 17px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+
+
+/* le bouton Payer */
+ #bouton_payer {
+    margin-left: 110px;
+ }
+
+ .payer {
+    background-color: #476eff;
+    border: none;
+    font-family: 'SKCuriosity-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 10px 97px ;
+ }
+
+.payer:hover {
+    background-color: #001666;
+    color: #fff;
+}
+
+/* position et affichage de la carte */
+.carte {
+    margin-top: 85px;
+    width: 527px;
+    height: 334px;
+    perspective: 1000px;
+}
+
+.carte-interieur {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+
+.carte-recto, .carte-verso {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 17px;
+    box-shadow: 8px 8px 30px #00000050;
+}
+/* Carte vue de face */
+
+.carte-recto {
+    background: url(images/Carte_du_monde.png) #ae9758;
+    background-size: 230px 130px;
+    background-repeat: no-repeat;
+    background-position: 280px 20px;
+    overflow: hidden;
+}
+
+.carte-recto::before {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
+
+.carte-recto, .carte-contenu {
+    z-index: 1;
+}
+
+#case_nom {
+    position: relative;
+    top: 100px;
+    background-color: #ffffff50;
+    border-radius: 5px;
+    width: 427px;
+    height: 36px;
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+   line-height: 36px ;
+}
+
+#numero_carte, #affichedate {
+    display: flex;
+    margin-left: 50px;
+}
+
+#part1, #part2, #part3, #part4 {
+    font-family: 'Orbitron-SemiBold', sans-serif;
+    font-size: 24px;
+    background-color: #ffffff50;
+    width: 95px;
+    height: 36px;
+    margin-right: 16px;
+    border-radius: 5px;
+    margin-top: 140px;
+    text-align: left;
+    line-height: 36px;
+}
+
+#affichemois, #afficheannee {
+    font-family: 'Orbitron-SemiBold', sans-serif;
+    font-size: 24px;
+    background-color: #ffffff50;
+    width: 65px;
+    height: 36px;
+    margin: 40px 5px 0 5px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 36px;
+}
+
+#affichedate > p {
+    margin-top: 50px;
+}
+
+#affichelogo {
+    margin-top: 35px;
+    margin-left: 130px;
+    /* content: url("images/Logo_MasterCard.svg"); */
+    width: 85px;
+    height: 50px;
+}
+
+/* carte vue de dos */
+
+.carte-verso {
+    transform: rotateY(180deg);
+    background: url(images/Carte_du_monde.png) #ae9758;
+    background-size: 230px 130px;
+    background-repeat: no-repeat;
+    background-position: 150px 180px;
+}
+
+#bande {
+    position: relative;
+    top: 35px;
+    width: 527px;
+    height: 50px;
+    background-color: #661600;
+}
+
+#affichecode {
+    margin-top: 65px;
+    margin-left: 30px;
+    width: 370px;
+    height: 40px;
+    background-color: #ffffff50;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Orbitron-SemiBold';
+    text-align: right;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.carte-verso input:focus {
+    outline: none;
+    
+}
+
+#partie_basse {
+    display: flex;
+    margin-top: 65px;
+}
+
+#colombe {
+    background: url(images/colombe.png) #ffffff50;
+    background-size: 95px 75px;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    width: 105px;
+    height: 85px;
+    margin-left: 30px;
+    border-radius: 15px;
+}
+
+#affichelogo2 {
+    /* content: url("images/Logo_MasterCard.svg"); */
+    width: 110px;
+    height: 75px;
+    margin-top: 6px;
+    margin-left: 250px;
+}
+
+.carte-recto {
+    transition: opacity .6s;
+}
+
+
+/* Responsive tablette */
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    main {
+        flex-direction: column-reverse;
+        width: 700px;
+        height: 850px;
+        align-items: center;
+        background: none;
+        box-shadow: none;
+        margin-top: 50px;
+    }
+
+    #saisie {
+        background-color: #fff;
+        width: 700px;
+        height: 600px;
+        box-shadow: 8px 8px 30px #00000050;
+        
+    }
+
+    .carte {
+        position: absolute;
+        top: 55px;
+    }
+
+    #logo {
+        margin-top: 200px;
+        margin-left: 200px;
+    }
+    #logo1, #logo2, #logo3 {
+        width: 90px;
+        height: 55px;
+        margin-right: 40px;
+    }
+    #label_nom, #label_number, #date {
+        margin-left: 80px;
+    }
+    #input_nom {
+        width: 375px;
+    }
+
+    #number_one, #number_two, #number_three, #number_four {
+        width: 84px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #mois, #annee {
+        width: 120px;
+    }
+
+    #cvc {
+        width: 85px;
+    }
+
+    #bouton_payer {
+        margin-left: 190px;
+        width: 380px;
+    }
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 812px){
+    main {
+        flex-direction: column-reverse;
+        width: 375px;
+        height: 812px;
+        align-items: center;
+        background: none;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    #saisie {
+        background-color: #fff;
+        width: 375px;
+        height: 505px;
+        box-shadow: 8px 8px 30px #00000050;
+        
+    }
+
+    .carte {
+        position: absolute;
+        top: -55px;
+        width: 375px;
+        height: 240px;
+    }
+  
+    .carte-recto {
+        background-size: 180px 100px;
+        background-position: 180px 15px;
+    }
+
+    #case_nom {
+        width: 325px;
+        height: 26px;
+        margin-left: 24px;
+        font-size: 20px;
+    }
+    
+    #numero_carte, #affichedate {
+        margin-left: 24px;
+    }
+    
+    #part1, #part2, #part3, #part4 {
+        font-size: 18px;
+        width:75px;
+        height: 26px;
+        margin-top: 120px;
+        line-height: 26px;
+        margin-right: 8px;
+    }
+    
+    #affichemois, #afficheannee {
+        font-size: 16px;    
+        width: 42px;
+        height: 26px;
+        line-height: 26px;
+        margin: 20px 5px 0 5px;
+    }
+    
+    #affichedate > p {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+ 
+    #affichelogo {
+        margin-top: 15px;
+        margin-left: 104px;
+        width: 65px;
+        height: 35px;
+    }
+
+    #logo {
+        margin-top: 20px;
+        margin-left: 24px;
+    }
+    #logo1, #logo2, #logo3 {
+        width: 80px;
+        height: 45px;
+        margin-right: 28px;
+        margin-left: 5px;
+    }
+    #label_number, #date {
+       display: flex;
+    }
+
+    #ligne1, #ligne2, #ligne3 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 24px;
+    }
+    #input_nom {
+        width: 320px;
+        margin-left: 0;
+    }
+
+    #number_one, #number_two, #number_three, #number_four {
+        width: 70px;
+    }
+
+    #mois, #annee {
+        width: 101px;
+    }
+
+    #cvc {
+        width: 65px;
+    }
+
+    #bouton_payer {
+        margin-left: 24px;
+        width: 325px;
+    }
+
+    .carte-verso {
+        background-size: 150px 80px;
+        background-position: 100px 140px;
+    }
+
+    #bande {
+        top: 22px;
+        width: 375px;
+        height: 40px;
+    }
+    
+    #affichecode {
+        margin-top: 45px;
+        margin-left: 16px;
+        width: 250px;
+        height: 33px;
+    }
+    
+    #partie_basse {
+        margin-top: 45px;
+    }
+    
+    #colombe {
+        background-size: 55px 45px;
+        background-position: 5px 5px;
+        width: 75px;
+        height: 55px;
+        margin-left: 16px;
+    }
+    
+    #affichelogo2 {
+       
+        width:75px;
+        height: 40px;
+        margin-top: 6px;
+        margin-left: 195px;
+    }
+
+}
+
+
